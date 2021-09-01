@@ -1,0 +1,4 @@
+LispMotor	KEYWORD1
+exchangeDir	KEYWORD2
+control		KEYWORD2
+brake		KEYWORD2
