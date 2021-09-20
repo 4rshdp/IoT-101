@@ -60,7 +60,7 @@ void printValues()
   float t = bme.readTemperature();
   float h = bme.readHumidity();
   if (isnan(h) || isnan(t)) {
-    Serial.println("Failed to read from DHT sensor!");
+    Serial.println("Failed to read from sensor!");
   }
 
   //clear display

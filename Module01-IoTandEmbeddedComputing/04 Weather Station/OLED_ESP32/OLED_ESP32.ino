@@ -43,10 +43,7 @@ void setup() {
   Serial.begin(115200); // initiailze serial monitor
 
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for some oleds. // SSD1306_SWITCHCAPVCC to turn on internal circitry on
-    Serial.println(F("SSD1306 allocation failed"));
-
-    
-    
+    Serial.println(F("SSD1306 allocation failed"));    
 }
 
   
@@ -56,7 +53,7 @@ void setup() {
   display.setTextColor(WHITE);
   display.setCursor(20, 20);//position where the text starts
   // Display static text
-  display.println("hello kitty"); //send the text to the display 
+  display.println("hello world"); //send the text to the display 
   display.display();//display the text on the screen.
 }
 
@@ -81,6 +78,9 @@ startscrollleft(0x00, 0x0F): scroll text from right to left
 startscrolldiagright(0x00, 0x07): scroll text from left bottom corner to right upper corner
 startscrolldiagleft(0x00, 0x07): scroll text from right bottom corner to left upper corner
 */
+
+
+
 
 
 //#include <Wire.h>
@@ -129,6 +129,7 @@ void loop() {
   display.stopscroll();
   delay(1000);
 }
+
 
 
 /**************************************************************************************************************************************************************************************************************************************/
@@ -235,7 +236,6 @@ void setup() {
 void loop() {
   
 }
-
 */
 
  
