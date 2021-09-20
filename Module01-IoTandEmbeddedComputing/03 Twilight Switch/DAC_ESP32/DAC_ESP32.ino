@@ -2,12 +2,13 @@
 
 
 void setup() {
+  pinMode(DAC,OUTPUT);
   // put your setup code here, to run once:
 
 }
 
 void loop() {
   
-  dacWrite(DAC2, 255);
+  dacWrite(DAC, 200);
 
 }

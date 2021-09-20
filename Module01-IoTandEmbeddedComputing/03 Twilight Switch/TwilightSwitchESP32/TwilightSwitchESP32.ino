@@ -9,26 +9,26 @@
 
 
 
-int sensorPin = 36;
-int ledPin = 2;
-//int relayOut = 25;
-
-void setup(){
-  pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
-}
-
-void loop(){
-  int sensorVal = map(analogRead(sensorPin),0,4095,0,100);
-  Serial.println(sensorVal);
-
-  if(sensorVal<40){
-    digitalWrite(ledPin, HIGH);
-  }
-  else{
-    digitalWrite(ledPin,LOW);
-  }
-}
+//int sensorPin = 36;
+//int ledPin = 2;
+////int relayOut = 25;
+//
+//void setup(){
+//  pinMode(ledPin, OUTPUT);
+//  Serial.begin(9600);
+//}
+//
+//void loop(){
+//  int sensorVal = map(analogRead(sensorPin),0,4095,0,100);
+//  Serial.println(sensorVal);
+//
+//  if(sensorVal<40){
+//    digitalWrite(ledPin, HIGH);
+//  }
+//  else{
+//    digitalWrite(ledPin,LOW);
+//  }
+//}
 
 
 
@@ -60,7 +60,7 @@ void loop(){
 //Twilight Switch2
 
 
-/*
+
 
 
 #define DACpin 26
@@ -78,7 +78,7 @@ void loop(){
   dacWrite(DACpin,sensorVal);
 }
 
-*/
+
 
 
  
