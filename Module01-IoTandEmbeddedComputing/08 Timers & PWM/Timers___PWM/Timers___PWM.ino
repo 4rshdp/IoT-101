@@ -49,7 +49,7 @@ void loop() {
 //  Serial.begin(115200);
 //
 //  pinMode(4, OUTPUT);
-//  digitalWrite(4, LOW);    // turn the LED off by making the voltage LOW
+//  digitalWrite(4, LOW);    
 //
 //  Serial.println("start timer ");
 //  timer = timerBegin(0, 80, true);  // 
@@ -72,80 +72,88 @@ void loop() {
 
 
 
-/*
 
 
 
 
-#include "Freenove_WS2812_Lib_for_ESP32.h"
 
-#define LEDS_COUNT 6
-#define LEDS_PIN 33
-#define CHANNEL 0
+//#include "Freenove_WS2812_Lib_for_ESP32.h"
+//
+//#define LEDS_COUNT 6
+//#define LEDS_PIN 33
+//#define CHANNEL 0
+//
+//Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(LEDS_COUNT, LEDS_PIN, CHANNEL, TYPE_GRB);
+//
+//
+//
+//hw_timer_t * timer0 = NULL;
+//hw_timer_t * timer1 = NULL;
+//portMUX_TYPE timerMux0 = portMUX_INITIALIZER_UNLOCKED;
+//portMUX_TYPE timerMux1 = portMUX_INITIALIZER_UNLOCKED;
+//
+//volatile int led1stat = 0; 
+//volatile int led2stat = 0; 
+//
+//void IRAM_ATTR onTimer0(){
+//  // Critical Code here
+//  portENTER_CRITICAL_ISR(&timerMux0);
+//  led1stat =! led1stat;
+//  digitalWrite(4, led1stat);   // turn the LED on or off
+//  portEXIT_CRITICAL_ISR(&timerMux0);
+//}
+//
+//void IRAM_ATTR onTimer1(){
+//  // Critical Code here
+//  portENTER_CRITICAL_ISR(&timerMux1);
+//  led2stat =! led2stat,
+//  portEXIT_CRITICAL_ISR(&timerMux1);
+//}
+//
+//void setup() {
+//  strip.begin();
+//  Serial.begin(115200);
+//
+//  pinMode(4, OUTPUT);
+//  digitalWrite(4, LOW);    // turn the LED off by making the voltage LOW
+//
+//  Serial.println("start timer 1");
+//  timer1 = timerBegin(1, 80, true);  // timer 1, countUp
+//  timerAttachInterrupt(timer1, &onTimer1, true); // edge (not level) triggered 
+//  timerAlarmWrite(timer1, 2000000, true); // 250000 * 1 us = 250 ms, autoreload true
+//
+//  Serial.println("start timer 0");
+//  timer0 = timerBegin(0, 80, true);  // timer 0, countUp
+//  timerAttachInterrupt(timer0, &onTimer0, true); // edge (not level) triggered 
+//  timerAlarmWrite(timer0, 250000, true); // 2000000 * 1 us = 2 s, autoreload true
+//
+//  // at least enable the timer alarms
+//  timerAlarmEnable(timer0); // enable
+//  timerAlarmEnable(timer1); // enable
+//}
+//
+//void loop() {
+//  if(led2stat == 0){
+//    for (int j = 0; j < 255; j += 2) {
+//      for (int i = 0; i < LEDS_COUNT; i++) {
+//        strip.setLedColorData(i, strip.Wheel((i * 256 / LEDS_COUNT + j) & 255));
+//        }
+//        strip.show();
+//        delay(2);
+//        }
+//      }
+//      else{
+//        for (int i = 0; i < LEDS_COUNT; i++) {
+//        strip.setLedColorData(i,0,0,0);
+//        }
+//        strip.show();
+//        delay(2);
+//        }  
+//}
 
-Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(LEDS_COUNT, LEDS_PIN, CHANNEL, TYPE_GRB);
 
 
 
-hw_timer_t * timer0 = NULL;
-hw_timer_t * timer1 = NULL;
-portMUX_TYPE timerMux0 = portMUX_INITIALIZER_UNLOCKED;
-portMUX_TYPE timerMux1 = portMUX_INITIALIZER_UNLOCKED;
-
-volatile int led1stat = 0; 
-volatile int led2stat = 0; 
-
-void IRAM_ATTR onTimer0(){
-  // Critical Code here
-  portENTER_CRITICAL_ISR(&timerMux0);
-  led1stat =! led1stat;
-  digitalWrite(4, led1stat);   // turn the LED on or off
-  portEXIT_CRITICAL_ISR(&timerMux0);
-}
-
-void IRAM_ATTR onTimer1(){
-  // Critical Code here
-  portENTER_CRITICAL_ISR(&timerMux1);
-  led2stat =! led2stat,
-  portEXIT_CRITICAL_ISR(&timerMux1);
-}
-
-void setup() {
-  strip.begin();
-  Serial.begin(115200);
-
-  pinMode(4, OUTPUT);
-  digitalWrite(4, LOW);    // turn the LED off by making the voltage LOW
-
-  Serial.println("start timer 1");
-  timer1 = timerBegin(1, 80, true);  // timer 1, countUp
-  timerAttachInterrupt(timer1, &onTimer1, true); // edge (not level) triggered 
-  timerAlarmWrite(timer1, 250000, true); // 250000 * 1 us = 250 ms, autoreload true
-
-  Serial.println("start timer 0");
-  timer0 = timerBegin(0, 80, true);  // timer 0, countUp
-  timerAttachInterrupt(timer0, &onTimer0, true); // edge (not level) triggered 
-  timerAlarmWrite(timer0, 2000000, true); // 2000000 * 1 us = 2 s, autoreload true
-
-  // at least enable the timer alarms
-  timerAlarmEnable(timer0); // enable
-  timerAlarmEnable(timer1); // enable
-}
-
-void loop() {
-  if(led2stat == 0){
-    strip.setLedColorData(1,0);
-    strip.show();
-  }
-  else{
-    strip.setLedColorData(1,255);
-    strip.show();
-  }
-}
-
-
-
-*/
 
 
 
