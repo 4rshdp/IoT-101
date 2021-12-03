@@ -22,6 +22,8 @@ Adafruit_BME280 bme; // Creating an object of adafruitBME_280, so that we can ac
 unsigned long delayTime;
 
 void setup() {
+  pinMode(12,OUTPUT);
+  digitalWrite(12,HIGH);
   Serial.begin(115200);//start a serial communication
 
   bool status;
