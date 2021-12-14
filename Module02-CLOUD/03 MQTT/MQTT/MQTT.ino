@@ -20,8 +20,8 @@ int sensorPin = 36;
 const char* ssid = "Qeslanet";  // Enter SSID here
 const char* pass = "BenignAlgorithm";  //Enter Password here
 char mqttUserName[] = "MQTTtest01";  // Use any name.
-char mqttPass[] = "5X0T8DI5Y549RCPJ"; // Change to your MQTT API Key from Account > MyProfile.   
-char writeAPIKey[] = "RLMS8FAPQJCZDPPH"; // Change to your channel write API key.
+char mqttPass[] = "VSN0XKBJRX54R3BD"; // Change to your MQTT API Key from Account > MyProfile.   
+char writeAPIKey[] = "PALYDHGZFOO9FVG2"; // Change to your channel write API key.
 long channelID = 1383134; // Change to your channel ID.
 
 static const char alphanum[] ="0123456789"
@@ -137,7 +137,7 @@ void mqttPublishFeed() {
   sensorVal = analogRead(sensorPin); // Read value from ldr
   
   // Create data string to send to ThingSpeak.
-  String data = String("field1=") + String(sensorVal, DEC) + "&field2=" + String(sensorVal, DEC);
+  String data = String("field1=") + String(sensorVal, DEC);// + "&field2=" + String(sensorVal, DEC);
   int length = data.length();
   const char *msgBuffer;
   msgBuffer=data.c_str();
